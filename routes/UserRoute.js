@@ -3,11 +3,17 @@ const Users = require('../config/schemas/UsersSchema')
 const bcrypt = require('bcrypt');
 const Roles = require('../config/schemas/RolesSchema');
 const mongoose = require('mongoose');
-const Cart = require('../config/schemas/CartSchema');
 const ObjectId = mongoose.Types.ObjectId
 
 const router = express.Router()
 const saltRound = 5;
+
+router.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "*");
+    res.header("Access-Control-Allow-Headers", "*");
+    next();
+});
 
 // Get Users
 
