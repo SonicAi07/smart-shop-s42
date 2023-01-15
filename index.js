@@ -15,7 +15,7 @@ const MailRouter = require('./routes/MailRouter')
 
 const app = express()
 app.use(cors({
-    origin: "https://smart-shop-ilyas.netlify.app/",
+    origin: "https://smart-shop-ilyas.netlify.app",
     methods: ["GET", "POST"],
     credentials: true
 }))
