@@ -5,13 +5,6 @@ const ObjectId = mongoose.Types.ObjectId
 
 const router = express.Router()
 
-router.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin : *");
-    res.header("Access-Control-Allow-Methods : PUT, GET, POST");
-    res.header("Access-Control-Allow-Headers : Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-
 router.get('/get-cart', (req, res) => {
     Cart.find({}).then((result) => {
         res.send(result)
